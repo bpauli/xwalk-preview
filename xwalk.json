@@ -3,6 +3,9 @@
     "xwalk": {
       "multi-field": {
         "enabled": true
+      },
+      "preview-publish-role-check": {
+        "enabled": true
       }
     }
   }
