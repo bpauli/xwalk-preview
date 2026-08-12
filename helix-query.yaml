@@ -1,16 +1,35 @@
 version: 1
 
 indices:
-  pages:
+  en:
     include:
-      - '/**'
+      - '/en/**'
     exclude:
       - '/**.json'
-    target: /query-index.json
+    target: /en/query-index.json
     properties:
       lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       robots:
         select: head > meta[name="robots"]
+        value: attribute(el, "content")
+      primary-language-url:
+        select: head > meta[name="primary-language-url"]
+        value: attribute(el, "content")
+  fr:
+    include:
+      - '/fr/**'
+    exclude:
+      - '/**.json'
+    target: /fr/query-index.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")
+      primary-language-url:
+        select: head > meta[name="primary-language-url"]
         value: attribute(el, "content")
