@@ -3,7 +3,7 @@ version: 1
 sitemaps:
   default:
     origin: https://main--xwalk-preview--bpauli.aem.live
-    destination: /sitemap.xml
+    default: en
     lastmod: YYYY-MM-DD
     languages:
       en:
